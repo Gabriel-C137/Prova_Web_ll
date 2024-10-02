@@ -13,7 +13,7 @@ conexao.connect((err) => {
         console.log("Erro ao conectar no my sql...");
         return;
     }
-    conexao.query('USE ' + database);
+    conexao.query("USE " + database);
     console.log("\nConexao estabelecida com sucesso");
 
     module.exports - conexao;

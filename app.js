@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+const livrosRoutes = require("./api/routes/livrosRoutes")
 const peca = require('./api/routes/pecasRoutes');
 const index = require('./api/routes/indexRoutes');
 
@@ -18,7 +19,8 @@ app.use(express.static('js'));
 
 const port = 3000;
 
-app.use('/peca', peca);
+app.use("/livros", livrosRoutes);
+app.use("/peca", peca);
 app.use("/", index);
 
 //servidor rodando
