@@ -2,6 +2,7 @@ const livrosModels = require("../models/livrosModels.js");
 
 module.exports = {
 getAll,
+getById,
 }
 
 function getAll(req, res) {
@@ -18,7 +19,7 @@ function getAll(req, res) {
 
             return res.json(resultado)
         }
-    }
-    )
+    })
 };
+
 
