@@ -1,4 +1,4 @@
-const livrosModels = require("../models/livrosModels.js");
+const editorasModels = require("../models/editorasModels.js");
 
 module.exports = {
 getAll,
@@ -6,7 +6,6 @@ getById,
 create,
 update,
 remove,
-livrosListar,
 }
 
 
@@ -14,7 +13,7 @@ function getAll(req, res){
     console.log("\nController - Iniciando a Leitura dos Dados dos Livros da Model...\n")
     var lerLivros
     console.time(lerLivros)
-    livrosModels.getAll(function(err, result){
+    editorasModels.getAll(function(err, resultado){
         if(err){
             throw err
         }else {
@@ -22,20 +21,20 @@ function getAll(req, res){
             console.log(resultado)
             console.timeEnd(lerLivros)
 
-            return res.json(result)
+            return res.json(resultado)
         }
     })
 };
 
 function getById(req, res){
     var cod = req.params.id;
-    livrosModels.getById(cod, function (err, result){
+    editorasModels.getById(cod, function (err, resultado){
         //console.log("Dado: ", resultado[0])
         console.log("Livros Foi Lido...")
         if(err){
             throw err
         }else {
-            return res.json(result)
+            return res.json(resultado)
         }
     })
 }
@@ -46,7 +45,7 @@ function create(req, res){
     console.log(req.body)
     dados.liv_codigo = 0
 
-    livrosModels.create(dados, function(err, result){
+    editorasModels.create(dados, function(err, resultado){
         if (err){
             throw err;
         }else {
@@ -62,7 +61,7 @@ function update(req, res) {
     var dados = req.body;
     console.log(req.body)
     console.log("Código: "+ cod)
-    livrosModels.update(dados, cod, function(err, result){
+    editorasModels.update(dados, cod, function(err, resultado){
         if (err){
             throw err;
         }else{
@@ -73,26 +72,12 @@ function update(req, res) {
 
 function remove(req, res){
     var cod = req.params.id;
-    livrosModels.remove(cod, function (err, result){
+    editorasModels.remove(cod, function (err, resultado){
         console.log("Livros Removido...")
         if(err){
             throw err
         }else {
-            return res.json(result)
-        }
-    })
-}
-
-function livrosListar(req, res) {
-    console.log("Controller Listar Livros")
-    livrosModels.listarLivros(function(err, result){
-        console.log("Retorno model ListarLivros...")
-        if (err){
-            throw err
-        }else{
-            res.render('frm_listarLivros.ejs', {
-                obj_livros: result
-            })
+            return res.json(resultado)
         }
     })
 }

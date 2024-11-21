@@ -1,0 +1,7 @@
+tr:ntn-child(even){
+	background-color: beige;
+}
+
+tr:ntn-child(odd){
+	background-color: grey;
+}

@@ -1,6 +1,6 @@
 const conexao = require("../config/conexao");
 
-console.log("Acessando Models dos Livros...")
+console.log("Acessando Models das Editoras...")
 
 
 module.exports = {
@@ -9,7 +9,6 @@ module.exports = {
     create,
     update,
     remove,
-    listarLivros,
 }
 
 function getAll(callback){
@@ -44,10 +43,4 @@ function update(dados, codigo, callback){
 
 function remove(codigo, callback) {
     conexao.query("DELETE FROM livros WHERE liv_codigo = "+ codigo, callback)
-}
-
-function listarLivros(callback){
-    m_sql = 'SELECT A.*, B.aut_apelido, C.edt_nome FROM livros A LEFT JOIN autores B ON A.aut_codigo = B.aut_codigo LEFT JOIN editoras C ON A.edt_codigo = C.edt_codigo';
-
-    conexao.query(m_sql, callback)
 }

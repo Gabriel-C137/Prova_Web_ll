@@ -1,20 +1,6 @@
 
 module.exports = {
-    index,
-    indexLogin,
-    indexNotFound,
-}
-
-function index(req, res) {
-    console.log('Rota Raiz Encontrada!!!');
-    res.send('<h3> Rota Raiz Encontrada! <br><br> Nova Rota Sobre Produtos  <br><br> Avaliação de Web-II - Backend </h3>');
-}
-
-function indexLogin(req, res) {
-    res.render('produtos.ejs', {
-        title: "Login",
-        mensagem: "Nova rota sobre produtos"
-    })
+    indexNotFound
 }
 
 function indexNotFound(req, res) {

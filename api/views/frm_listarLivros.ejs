@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../public/estilos/livros.css">
+    <title>Livros</title>
+    <style></style>
+</head>
+<body>
+    <header>
+        <h3>Listagem de Livros</h3>
+    </header>
+
+    <div>
+        <fieldset>
+            <legend>Registro de Livros</legend>
+            <table>
+                <tr>Código</tr>
+                <tr>Título do Livro</tr>
+                <tr>Autor</tr>
+                <tr>Editora</tr>
+
+                <% for(let i=0; i<obj_livros.length; i++) { %>
+                    <tr>
+                        <td><%=obj_livros[i].liv_codigo%></td>
+                        <td><%=obj_livros[i].liv_titulo%></td>
+                        <td><%=obj_livros[i].aut_apelido%></td>
+                        <td><%=obj_livros[i].edt_nome%></td>
+                    </tr>
+                <%} %>
+            </table>
+        </fieldset>
+    </div>
+    
+</body>
+</html>

@@ -15,6 +15,6 @@ conexao.connect((err) => {
     }
     conexao.query("USE " + database);
     console.log("\nConexao estabelecida com sucesso");
-
-    module.exports - conexao;
 })
+
+module.exports = conexao;

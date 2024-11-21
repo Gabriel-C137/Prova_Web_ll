@@ -3,9 +3,10 @@ const app = express();
 
 const livrosRoutes = require("./api/routes/livrosRoutes")
 const peca = require('./api/routes/pecasRoutes');
-const index = require('./api/routes/indexRoutes');
+const loginRoutes = require('./api/routes/loginRoutes');
 
 app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
 app.set('view engine', 'ejs');
 app.set('views', './api/views');
@@ -19,9 +20,9 @@ app.use(express.static('js'));
 
 const port = 3000;
 
+app.use("/", loginRoutes);
 app.use("/livros", livrosRoutes);
 app.use("/peca", peca);
-app.use("/", index);
 
 //servidor rodando
 app.listen(port, () => {
@@ -29,5 +30,6 @@ app.listen(port, () => {
 })
 
 
-const conexao = require("./api/config/conexao");
+//const conexao = require("./api/config/conexao");
+
 module.exports = app;
