@@ -6,9 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../public/estilos/livros.css">
     <title>Obras</title>
-    <style></style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 1.8em;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        td, th {
+            font-size: 1em;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <h3>Listagem das Obras</h3>
     </header>
@@ -17,32 +58,35 @@
         <fieldset>
             <legend>Registro de Obras</legend>
             <table>
-                <div class="Ajuste">
-                    <tr>Código_Obra</tr>
-                    <tr>Cidade_Obra</tr>
-                    <tr>Tipo_Obra</tr>
-                    <tr>Valor_Obra</tr>
-                    <tr>Data_Obra</tr>
-                    <tr>Engenheiro</tr>
-                    <tr>Crea_Engenheiro</tr>
-                    <tr>Data_Crea_Engenheiro</tr>
-                </div>
-
-                <% for(let i=0; i<obj_obra.length; i++) { %>
+                <thead>
                     <tr>
-                        <td><%=obj_obra[i].obr_codigo%></td>
-                        <td><%=obj_obra[i].obr_cidade%></td>
-                        <td><%=obj_obra[i].obr_tipoobra%></td>
-                        <td><%=obj_obra[i].obr_valor%></td>
-                        <td><%=obj_obra[i].obr_dtinicio%></td>
-                        <td><%=obj_obra[i].eng_nome%></td>
-                        <td><%=obj_obra[i].eng_crea%></td>
-                        <td><%=obj_obra[i].eng_datacrea%></td>
+                        <th>Código_Obra</th>
+                        <th>Cidade_Obra</th>
+                        <th>Tipo_Obra</th>
+                        <th>Valor_Obra</th>
+                        <th>Data_Obra</th>
+                        <th>Engenheiro</th>
+                        <th>Crea_Engenheiro</th>
+                        <th>Data_Crea_Engenheiro</th>
                     </tr>
-                <%} %>
+                </thead>
+                <tbody>
+                    <% for(let i = 0; i < obj_obra.length; i++) { %>
+                        <tr>
+                            <td><%= obj_obra[i].obr_codigo %></td>
+                            <td><%= obj_obra[i].obr_cidade %></td>
+                            <td><%= obj_obra[i].obr_tipoobra %></td>
+                            <td><%= obj_obra[i].obr_valor %></td>
+                            <td><%= obj_obra[i].obr_dtinicio %></td>
+                            <td><%= obj_obra[i].eng_nome %></td>
+                            <td><%= obj_obra[i].eng_crea %></td>
+                            <td><%= obj_obra[i].eng_datacrea %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
             </table>
         </fieldset>
     </div>
-    
+
 </body>
 </html>
