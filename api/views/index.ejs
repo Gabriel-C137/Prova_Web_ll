@@ -4,34 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> <%= title %>  </title>
+    <title> <%= title %> </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h3 {
+            text-align: center;
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        #relLivros {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #relLivros form {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <h3>Menu Projeto PI - DSM 2°</h3>
 
-    <br>
-    <br>
-    
-    
-    <div id="relLivros" style="border: 1px solid black">
-        <br>
-        <br>
-        <form action="/livros/listar" method="post">
-            <input type="submit" value="Listar Livros">
-        </form>
-        <br>
-        <br>
-        <form action="/obra/listar" method="post">
-            <input type="submit" value="Listar Obras">
-        </form>
-        <br>
-        <br>
-        <form action="/engenheiro/listar" method="post">
-            <input type="submit" value="Listar Engenheiros">
-        </form>
-        <br>
-        <br>
+    <div id="bottons">
+        <div id="relLivros">
+            <form action="/livros/listar" method="post">
+                <input type="submit" value="Listar Livros">
+            </form>
+            
+            <form action="/obra/listar" method="post">
+                <input type="submit" value="Listar Obras">
+            </form>
+            
+            <form action="/engenheiro/listar" method="post">
+                <input type="submit" value="Listar Engenheiros">
+            </form>
+        </div>
     </div>
-
 </body>
 </html>
