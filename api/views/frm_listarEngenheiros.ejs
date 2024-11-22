@@ -18,21 +18,28 @@
             <legend>Registro de Engenheiros</legend>
             <table>
                 <tr>Código</tr>
-                <tr>Título do Livro</tr>
-                <tr>Autor</tr>
-                <tr>Editora</tr>
+                <tr>Engenheiro</tr>
+                <tr>Apelido</tr>
+                <tr>Código_Obra</tr>
+                <tr>Tipo_Da_Obra</tr>
+                <tr>Cidade_Obra</tr>
+                <tr>Valor_Obra</tr>
 
-                <% for(let i=0; i<obj_livros.length; i++) { %>
+                <% for(let i=0; i<obj_engenheiro.length; i++) { %>
                     <tr>
-                        <td><%=obj_livros[i].liv_codigo%></td>
-                        <td><%=obj_livros[i].liv_titulo%></td>
-                        <td><%=obj_livros[i].aut_apelido%></td>
-                        <td><%=obj_livros[i].edt_nome%></td>
+                        <td><%=obj_engenheiro[i].eng_codigo%></td>
+                        <td><%=obj_engenheiro[i].eng_nome%></td>
+                        <td><%=obj_engenheiro[i].eng_apelido%></td>
+                        <td><%=obj_engenheiro[i].obr_codigo%></td>
+                        <td><%=obj_engenheiro[i].obr_tipoobra%></td>
+                        <td><%=obj_engenheiro[i].obr_cidade%></td>
+
+                        
+                        <td><%=obj_engenheiro[i].obr_valor%></td>
                     </tr>
                 <%} %>
             </table>
         </fieldset>
     </div>
-    
 </body>
 </html>

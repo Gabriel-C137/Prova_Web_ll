@@ -17,17 +17,27 @@
         <fieldset>
             <legend>Registro de Obras</legend>
             <table>
-                <tr>Código</tr>
-                <tr>Título do Livro</tr>
-                <tr>Autor</tr>
-                <tr>Editora</tr>
+                <div class="Ajuste">
+                    <tr>Código_Obra</tr>
+                    <tr>Cidade_Obra</tr>
+                    <tr>Tipo_Obra</tr>
+                    <tr>Valor_Obra</tr>
+                    <tr>Data_Obra</tr>
+                    <tr>Engenheiro</tr>
+                    <tr>Crea_Engenheiro</tr>
+                    <tr>Data_Crea_Engenheiro</tr>
+                </div>
 
-                <% for(let i=0; i<obj_livros.length; i++) { %>
+                <% for(let i=0; i<obj_obra.length; i++) { %>
                     <tr>
-                        <td><%=obj_livros[i].liv_codigo%></td>
-                        <td><%=obj_livros[i].liv_titulo%></td>
-                        <td><%=obj_livros[i].aut_apelido%></td>
-                        <td><%=obj_livros[i].edt_nome%></td>
+                        <td><%=obj_obra[i].obr_codigo%></td>
+                        <td><%=obj_obra[i].obr_cidade%></td>
+                        <td><%=obj_obra[i].obr_tipoobra%></td>
+                        <td><%=obj_obra[i].obr_valor%></td>
+                        <td><%=obj_obra[i].obr_dtinicio%></td>
+                        <td><%=obj_obra[i].eng_nome%></td>
+                        <td><%=obj_obra[i].eng_crea%></td>
+                        <td><%=obj_obra[i].eng_datacrea%></td>
                     </tr>
                 <%} %>
             </table>

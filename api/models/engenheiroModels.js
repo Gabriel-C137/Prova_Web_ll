@@ -42,8 +42,8 @@ function remove(codigo, callback) {
     conexao.query("DELETE FROM engenheiro WHERE eng_codigo = "+ codigo, callback)
 }
 
-function listarEngenheiro(callback){
-    m_sql = 'SELECT A.*, B.aut_apelido, C.edt_nome FROM engenheiro A LEFT JOIN autores B ON A.aut_codigo = B.aut_codigo LEFT JOIN editoras C ON A.edt_codigo = C.edt_codigo';
-
-    conexao.query(m_sql, callback)
+function listarEngenheiro(callback) {
+    m_sql = 'SELECT A.eng_codigo, A.eng_nome, A.eng_apelido, B.obr_codigo, B.obr_tipoobra, B.obr_cidade, B.obr_valor FROM engenheiros A LEFT JOIN obras B ON A.eng_codigo = B.eng_codigo';
+    
+    conexao.query(m_sql, callback);
 }
