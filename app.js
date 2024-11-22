@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 
-const livrosRoutes = require("./api/routes/livrosRoutes")
+const livrosRoutes = require("./api/routes/livrosRoutes");
 const peca = require('./api/routes/pecasRoutes');
 const loginRoutes = require('./api/routes/loginRoutes');
+const obraRoutes = require('./api/routes/obraRoutes');
+const engenheiroRoutes = require('./api/routes/engenheiroRoutes');
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
@@ -23,6 +25,8 @@ const port = 3000;
 app.use("/", loginRoutes);
 app.use("/livros", livrosRoutes);
 app.use("/peca", peca);
+app.use("/engenheiro", engenheiroRoutes);
+app.use("/obra", obraRoutes);
 
 //servidor rodando
 app.listen(port, () => {
